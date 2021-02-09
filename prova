@@ -2,7 +2,7 @@ $ python bot_main.py
 $ pip install python-telegram-bot --upgrade
 
 // Crea il tuo bot passando il token ricevuto da @BotFather 
-TelegramBot bot =  new  TelegramBot ( "1459713391:AAHymmVVZxIxVYpoExjJFTR7tx9kSQolYCI" );
+//TelegramBot bot =  new  TelegramBot ( "1459713391:AAHymmVVZxIxVYpoExjJFTR7tx9kSQolYCI" );
 
 // Registrati per il 
 bot degli aggiornamenti . setUpdatesListener (aggiornamenti - > {
