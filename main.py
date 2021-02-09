@@ -6,11 +6,6 @@
 
 import telebot
 
-import telepot
-from telepot.loop import MessageLoop
-from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
-
-
 API_TOKEN = '1459713391:AAHymmVVZxIxVYpoExjJFTR7tx9kSQolYCI'
 
 bot = telebot.TeleBot(API_TOKEN)
