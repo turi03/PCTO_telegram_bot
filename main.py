@@ -1,10 +1,15 @@
-  
+
 #!/usr/bin/python
 
 # This is a simple echo bot using the decorator mechanism.
 # It echoes any incoming text messages.
 
 import telebot
+
+import telepot
+from telepot.loop import MessageLoop
+from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
+
 
 API_TOKEN = '1459713391:AAHymmVVZxIxVYpoExjJFTR7tx9kSQolYCI'
 
@@ -24,4 +29,3 @@ def send_welcome(message):
 def echo_message(message):
   if message.text=='Ciao':
     bot.reply_to(message,'ciao ancha te')
-bot.polling()
