@@ -6,3 +6,4 @@ https://www.html.it/pag/394635/creare-telegram-bot/
 https://github.com/pengrad/java-telegram-bot-api                                                 RIFERIMENTO X TUTTO → COMPLETO
 http://digitalhistoryhacks.blogspot.com/2006/09/easy-pieces-in-python-simple-scraping.html       ESTRAZIONE DATI X ORARIO
 https://youtu.be/ifd3JqW9wNU                                                                     PULSANTI E REAZIONE
+https://core.telegram.org/bots/samples                                                           CODICE UFFICIALE TELEGRAM
