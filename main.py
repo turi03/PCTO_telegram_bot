@@ -22,7 +22,7 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 
 def echo_message(message):
-  if message.text=='Ciao':
+  if message.text=='Ciao' or message.text=='ciao':
     bot.reply_to(message,'ciao ancha te')
 
 
