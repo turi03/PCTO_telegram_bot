@@ -29,3 +29,6 @@ def send_welcome(message):
 def echo_message(message):
   if message.text=='Ciao':
     bot.reply_to(message,'ciao ancha te')
+
+
+bot.polling()
