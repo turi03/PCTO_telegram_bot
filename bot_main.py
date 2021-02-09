@@ -2,7 +2,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import exchange
 
 # IMPORTANTE: inserire il token fornito dal BotFather nella seguente stringa
-TOKEN="ABCDEFGH12345678"
+TOKEN="1459713391:AAHymmVVZxIxVYpoExjJFTR7tx9kSQolYCI"
 
 def extract_number(text):
      return text.split()[1].strip()
