@@ -10,3 +10,4 @@ https://core.telegram.org/bots/samples                                          
 https://stackoverflow.com/questions/45558984/how-to-make-telegram-bot-dynamic-keyboardbutton-in-python-every-button-on-one-ro/51904640 
 https://youtu.be/OuVIe9vqkRE inline keyboard
 https://github.com/python-telegram-bot/python-telegram-bot/tree/master/tests  (esempi funzionanti)
+https://www.freecodecamp.org/news/learn-to-build-your-first-bot-in-telegram-with-python-4c99526765e4/   (immagini)
