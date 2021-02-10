@@ -8,3 +8,4 @@ http://digitalhistoryhacks.blogspot.com/2006/09/easy-pieces-in-python-simple-scr
 https://youtu.be/ifd3JqW9wNU                                                                     PULSANTI E REAZIONE x post direttamente da telegram → momentanei non codice
 https://core.telegram.org/bots/samples                                                           CODICE UFFICIALE TELEGRAM
 https://stackoverflow.com/questions/45558984/how-to-make-telegram-bot-dynamic-keyboardbutton-in-python-every-button-on-one-ro/51904640 
+https://youtu.be/OuVIe9vqkRE inline keyboard
