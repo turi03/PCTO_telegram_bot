@@ -12,3 +12,4 @@ https://youtu.be/OuVIe9vqkRE inline keyboard
 https://github.com/python-telegram-bot/python-telegram-bot/tree/master/tests  (esempi funzionanti)
 https://www.freecodecamp.org/news/learn-to-build-your-first-bot-in-telegram-with-python-4c99526765e4/   (immagini)
 https://realpython.com/beautiful-soup-web-scraper-python/                                         Scrubing pagina web(soap)
+https://stackoverflow.com/questions/45268368/how-to-send-a-hyperlink-in-bot-sendmessage            LINK
