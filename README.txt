@@ -14,3 +14,4 @@ https://www.freecodecamp.org/news/learn-to-build-your-first-bot-in-telegram-with
 https://realpython.com/beautiful-soup-web-scraper-python/                                         Scrubing pagina web(soap)
 https://stackoverflow.com/questions/45268368/how-to-send-a-hyperlink-in-bot-sendmessage            LINK
 https://pypi.org/project/unify/                                                                    pip install
+https://pypi.org/project/import-update/                                                              prova questo
