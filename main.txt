@@ -5,17 +5,19 @@ API_TOKEN = '1459713391:AAHymmVVZxIxVYpoExjJFTR7tx9kSQolYCI'
 
 bot = telebot.TeleBot(API_TOKEN)
 
-#button
+
+# button
 def gen_markup():
     markup = InlineKeyboardMarkup()
-    #bottoni su ogni riga
+    # bottoni su ogni riga
     markup.row_width = 2
 
     markup.add(InlineKeyboardButton("Studente", callback_data="cb_yes"),
-                InlineKeyboardButton("Professore", callback_data="cb_no"))
+               InlineKeyboardButton("Professore", callback_data="cb_no"))
     return markup
 
-#restituzione button
+
+# restituzione button
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
     if call.data == "cb_yes":
@@ -23,30 +25,43 @@ def callback_query(call):
     elif call.data == "cb_no":
         bot.answer_callback_query(call.id, "sei un professore")
 
-#richiesta iniziale
+
+# richiesta iniziale
 @bot.message_handler(commands=['orario'])
 def message_handler(message):
     bot.send_message(message.chat.id, "Ciao sei uno studente o un docente?", reply_markup=gen_markup())
 
-#--------------------------------------------------------------
 
-#Handle '/start' and '/stop'
+# --------------------------------------------------------------
+
+# Handle '/start' and '/stop'
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     bot.reply_to(message, """Ciao, questo è il progetto PCTO, classe 4BT-i, A.S 2020/2021""")
     bot.reply_to(message, """progetto di Coman E., Franturi M. e Vignoli M.""")
+    bot.reply_to(message, "Per conoscere i comandi presenti in questo bot premi pure :-) /commands")
+
 
 @bot.message_handler(commands=['stop'])
 def send_ok(message):
     bot.reply_to(message, """NON LASCIARMI PERPIACERE ♥""")
 
+
+@bot.message_handler(commands=['commands'])
+def send_ok(message):
+    bot.reply_to(message,
+                 """Eccoti i comandi disponibili:
+/orario per conoscere l'orario del giorno;
+                                            """)
+
+
 # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
-    if message.text=='Ciao' or message.text=='ciao':
-        bot.reply_to(message,'ciao ancha te')
-    elif message.text=='Elini' or message.text=='Elvin':
-        bot.reply_to(message,'chi? quel mangione?')
+    if message.text == 'Ciao' or message.text == 'ciao':
+        bot.reply_to(message, 'ciao ancha te')
+    elif message.text == 'Elini' or message.text == 'Elvin':
+        bot.reply_to(message, 'chi? quel mangione?')
 
 
 bot.polling()
