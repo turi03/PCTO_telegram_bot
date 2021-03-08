@@ -1,5 +1,7 @@
 Fonti x suggerimenti:
 
+https://readthedocs.org/projects/python-telegram-bot/downloads/pdf/stable/                        GUIDA
+
 https://github.com/MarcoBuster/ISArchimedeFeed
 https://youtu.be/EcscTVP71lg
 https://www.html.it/pag/394635/creare-telegram-bot/
