@@ -60,8 +60,6 @@ def send_ok(message):
 def echo_message(message):
     if message.text == 'Ciao' or message.text == 'ciao':
         bot.reply_to(message, 'ciao ancha te')
-    elif message.text == 'Elini' or message.text == 'Elvin':
-        bot.reply_to(message, 'chi? quel mangione?')
 
 
 bot.polling()
