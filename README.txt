@@ -18,3 +18,4 @@ https://stackoverflow.com/questions/45268368/how-to-send-a-hyperlink-in-bot-send
 https://pypi.org/project/unify/                                                                    pip install
 https://pypi.org/project/import-update/                                                              prova questo
 https://youtu.be/qqXo5II4PBc                                                                speranza del bottone
+https://youtu.be/EwL509OjD8A                                                                 Emojy
