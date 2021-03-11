@@ -17,3 +17,4 @@ https://realpython.com/beautiful-soup-web-scraper-python/                       
 https://stackoverflow.com/questions/45268368/how-to-send-a-hyperlink-in-bot-sendmessage            LINK
 https://pypi.org/project/unify/                                                                    pip install
 https://pypi.org/project/import-update/                                                              prova questo
+https://youtu.be/qqXo5II4PBc                                                                speranza del bottone
