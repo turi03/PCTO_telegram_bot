@@ -19,3 +19,4 @@ https://pypi.org/project/unify/                                                 
 https://pypi.org/project/import-update/                                                              prova questo
 https://youtu.be/qqXo5II4PBc                                                                speranza del bottone
 https://youtu.be/EwL509OjD8A                                                                 Emojy
+http://www.andreaminini.com/python/come-aprire-una-pagina-web-con-python                    html site
