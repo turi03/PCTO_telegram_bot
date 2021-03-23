@@ -1,0 +1,81 @@
+import telebot
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
+from Classi import classe
+from Docenti import docenti
+
+API_TOKEN = '1459713391:AAHymmVVZxIxVYpoExjJFTR7tx9kSQolYCI'
+bot = telebot.TeleBot(API_TOKEN)
+
+
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    bot.reply_to(message, "Per conoscere i comandi presenti in questo bot premi pure :-) /commands")
+
+
+@bot.message_handler(commands=['commands'])
+def send_ok(message):
+    bot.reply_to(message,
+                 """Eccoti i comandi disponibili:
+/orario per conoscere l'orario seguendo i vari passaggi;
+/docente per l'orario docenti
+/studenti o /classe per l'orario di lezione
+""")
+
+
+# --------------------------------------------------------------------------------
+# button
+def gen_markup():
+    markup = InlineKeyboardMarkup()
+    # bottoni su ogni riga
+    markup.row_width = 2
+
+    markup.add(InlineKeyboardButton("Studente", callback_data="cb_yes"),
+               InlineKeyboardButton("Professore", callback_data="cb_no"))
+    return markup
+
+
+a = ""
+
+
+# restituzione button
+@bot.callback_query_handler(func=lambda call: True)
+def callback_query(call):
+    if call.data == "cb_yes":
+        a = bot.answer_callback_query(call.id, "studente")
+        callback_query()
+    elif call.data == "cb_no":
+        a = bot.answer_callback_query(call.id, "professore")
+        callback_query()
+
+
+# richiesta iniziale
+@bot.message_handler(commands=['orario'])
+def message_handler(message):
+    bot.send_message(message.chat.id, "Ciao sei uno studente o un docente?", reply_markup=gen_markup())
+
+
+# --------------------------------------------------------------------------------------------
+
+@bot.message_handler(func=lambda message: True)
+def send_orastud(message):
+    def callback_query(call):
+        if a == "studente":
+            try:
+                # bot.send_message(message.chat.id, "ecco il tuo orario")
+                bot.send_message(message.chat.id, classe[message.text])
+            except:
+                bot.send_message(message.chat.id, "classe non trovata...riprova")
+        elif a=="docente":
+            try:
+                # bot.send_message(message.chat.id, "ecco il tuo orario")
+                bot.send_message(message.chat.id, docenti[message.text])
+            except:
+                bot.send_message(message.chat.id, "docente non trovato...riprova")
+        else:
+            bot.send_message(message.chat.id, "error 404")
+
+
+bot.polling()
+
+if __name__ == "__main__":
+    bot.polling(none_stop=True)
