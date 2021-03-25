@@ -1,0 +1,54 @@
+#main
+@bot.message_handler(commands=['start'])
+def any_msg(message):
+    keyboardmain = types.InlineKeyboardMarkup(row_width=2)
+    first_button = types.InlineKeyboardButton(text="Studenti", callback_data="firstStudenti")
+    second_button = types.InlineKeyboardButton(text="Docenti", callback_data="secondDocenti")
+    keyboardmain.add(first_button, second_button)
+    bot.send_message(message.chat.id, "Mainmenu", reply_markup=keyboardmain)
+
+@bot.callback_query_handler(func=lambda call:True) #2
+def callback_inline(call):
+    if call.data == "mainmenu":
+
+        keyboardmain = types.InlineKeyboardMarkup(row_width=2)
+        first_button = types.InlineKeyboardButton(text="Studenti", callback_data="firstStudenti")
+        second_button = types.InlineKeyboardButton(text="Docenti", callback_data="secondDocenti")
+        keyboardmain.add(first_button, second_button)
+        bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id, text="menu",reply_markup=keyboardmain)
+
+    if call.data == "firstStudenti":
+        keyboard = types.InlineKeyboardMarkup()
+        rele1 = types.InlineKeyboardButton(text="1°", callback_data="1")
+        rele2 = types.InlineKeyboardButton(text="2°", callback_data="2")
+        rele3 = types.InlineKeyboardButton(text="3°", callback_data="3")
+        rele4 = types.InlineKeyboardButton(text="4°", callback_data="4")
+        rele5 = types.InlineKeyboardButton(text="5°", callback_data="5")
+        backbutton = types.InlineKeyboardButton(text="back", callback_data="mainmenu")
+        keyboard.add(rele1, rele2, rele3, rele4, rele5, backbutton)
+        bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id, text="Classi",reply_markup=keyboard)
+
+    elif call.data == "secondDocenti":
+        keyboard = types.InlineKeyboardMarkup()
+        backbutton = types.InlineKeyboardButton(text="back", callback_data="mainmenu")
+        keyboard.add(backbutton)
+        bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id, text="replaced text",reply_markup=keyboard)
+
+    elif call.data == "1":
+        keyboard = types.InlineKeyboardMarkup()
+        button1 =types.InlineKeyboardButton(text="A",callback_data="gg")
+        """buttonB = types.InlineKeyboardButton(text="B" callback_data="gg")
+        buttonC = types.InlineKeyboardButton(text="C", callback_data="gg")
+        buttonD = types.InlineKeyboardButton(text="D")
+        buttonE = types.InlineKeyboardButton(text="E")
+        buttonF = types.InlineKeyboardButton(text="F")
+        buttonG = types.InlineKeyboardButton(text="G")
+        buttonH = types.InlineKeyboardButton(text="H")
+        buttonI = types.InlineKeyboardButton(text="I")"""
+        backbutton = types.InlineKeyboardButton(text="back", callback_data="mainmenu")
+        keyboard.add(button1, backbutton)
+        bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id, text="Sezione",reply_markup=keyboard)
+
+
+if __name__ == "__main__":
+    bot.polling(none_stop=True)
