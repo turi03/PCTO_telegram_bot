@@ -1,14 +1,15 @@
 import telebot
 import Scriping
-API_TOKEN ='1708954723:AAFm6uHWOOtuGAmM465PVKFLnfIbPDebTZI'
+
+API_TOKEN = '1708954723:AAFm6uHWOOtuGAmM465PVKFLnfIbPDebTZI'
 bot = telebot.TeleBot(API_TOKEN)
 
 
-# Handle '/start' and '/stop'
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     bot.reply_to(message, """Ciao, questo è il progetto PCTO, classe 4BT-i, A.S 2020/2021""")
-    bot.reply_to(message, """progetto di Coman E., Franturi M. e Vignoli M.""")
+    bot.send_message(message.chat.id, """progetto di Coman E., Franturi M. e Vignoli M.""")
+    bot.reply_to(message, """Premi /help se desideri sapere i comandi oppure se mi hai gia usato procedi pure :-)""")
 
 
 @bot.message_handler(commands=['stop'])
@@ -16,7 +17,28 @@ def send_ok(message):
     bot.reply_to(message, """NON LASCIARMI PERPIACERE ♥""")
 
 
-# Handle all other messages with content_type 'text' (content_types defaults to ['text'])
+@bot.message_handler(commands=['help'])
+def send_ok(message):
+    bot.reply_to(message, """Ecco a te i comandi:""")
+    bot.send_message(message.chat.id, "/all per stampare tutti gli orari possibili \n"
+                                      "/circolari per essere aggiorato sulle circolari\n"
+                                      "scrivi nome e sarà mostrato il docente/classe (es.Bovenzi o 4BT-I)")
+
+
+@bot.message_handler(commands=['circolari'])
+def send_ok(message):
+    bot.send_message(message.chat.id, "https://t.me/isarchimede")
+
+
+@bot.message_handler(commands=['all'])
+def send_ok(message):
+    try:
+        while message:
+            bot.send_message(message.chat.id, Scriping.echo_all(message))
+    except:
+        Exception
+
+
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
     if message.text == 'Ciao' or message.text == 'ciao':
@@ -27,9 +49,6 @@ def echo_message(message):
         except:
             Exception
 
-
-
-bot.polling()
 
 if __name__ == "__main__":
     bot.polling(none_stop=True)
