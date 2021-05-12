@@ -45,7 +45,11 @@ def echo_message(message):
         bot.reply_to(message, 'ciao anche a te')
     else:
         try:
-            bot.send_message(message.chat.id, Scriping.echo_message(message))
+            x=message.text[0]
+            if(x=="0" or x=="1" or x=="2" or x=="3" or x=="4"):
+                bot.send_message(message.chat.id, Scriping.echo_orario(message))
+            else:
+                bot.send_message(message.chat.id, Scriping.echo_docente(message))
         except:
             Exception
 
