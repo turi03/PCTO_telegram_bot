@@ -22,7 +22,8 @@ def send_ok(message):
     bot.reply_to(message, """Ecco a te i comandi:""")
     bot.send_message(message.chat.id, "/all per stampare tutti gli orari possibili \n"
                                       "/circolari per essere aggiorato sulle circolari\n"
-                                      "scrivi nome e sarà mostrato il docente/classe (es.Bovenzi o 4BT-I)")
+                                      "\n"
+                                      "scrivi nome/classe con settaggi di default della tastiera e sarà mostrato il docente/classe (es.Bovenzi o 4BT-I)")
 
 
 @bot.message_handler(commands=['circolari'])
